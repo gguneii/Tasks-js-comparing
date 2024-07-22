@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ededleri muqayise et</h1>
+    <input type="number" id="a1">
+    <span id="result1"></span>
+    <input type="number" id="a2">
+    <span id="result2"></span>
+    <input type="number" id="a3">
+    <button onclick="yoxla()">Yoxla</button>
+
+    <script>
+        let a1 = document.getElementById("a1")
+        let a2 = document.getElementById("a2")
+        let a3 = document.getElementById("a3")
+        let result1 = document.getElementById("result1")
+        let result2 = document.getElementById("result2")
+
+        function yoxla() {
+            if (a1.value && a2.value && a3.value) {
+                if (+a1.value > +a2.value) {
+                    result1.innerHTML = ">"
+                }
+                else if (+a1.value < +a2.value) {
+                    result1.innerHTML = "<"
+                } else {
+                    result1.innerHTML = "="
+                }
+                if (+a2.value > +a3.value) {
+                    result2.innerHTML = ">"
+                }
+                else if (+a2.value < +a3.value) {
+                    result2.innerHTML = "<"
+                }
+                else {
+                    result2.innerHTML = "="
+                }
+            }
+
+            else {
+                alert("Please enter all values")
+            }
+
+        }
+    </script>
+</body>
+
+</html>

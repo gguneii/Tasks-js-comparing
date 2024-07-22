@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="a">x^2 +
+    <input type="number" id="b">x +
+    <input type="number" id="c">
+    <button onclick="disk()">=</button>
+    <span>0</span>
+    <p>Diskriminant: <span id="result"></span></p>
+    <p>x1= <span id="x1"></span> </p>
+    <p>x2= <span id="x2"></span> </p>
+
+    <script>
+        let a = document.getElementById("a")
+        let b = document.getElementById("b")
+        let c = document.getElementById("c")
+        let x1 = document.getElementById("x1")
+        let x2 = document.getElementById("x2")
+        let result = document.getElementById("result")
+
+        function disk(){
+            result.innerHTML = b.value ** 2 - (4 * a.value * c.value)
+            let disk  = result.innerHTML
+            if(disk > 0){
+                x1.innerHTML = ( - +b.value + Math.sqrt(disk)) / (2 * +a.value)
+                x2.innerHTML = ( - +b.value - Math.sqrt(disk)) / (2 * +a.value)
+            }
+            else if (disk ==0){
+                x1.innerHTML = x2.innerHTML = - +b.value / (2 * +a.value)
+            }
+            else{
+                x1.innerHTML = x2.innerHTML = "Kokleri yoxdur"
+            }
+        }
+
+
+    </script>
+</body>
+</html>
